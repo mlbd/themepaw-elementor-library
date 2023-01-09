@@ -1,0 +1,20 @@
+{
+    "name": "marsh/themepaw-elementor-library",
+    "description": "A toolkit for Elementor library API",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohammad Limon",
+            "email": "mlimonbd@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Themepaw\\Elementor\\Library\\": "includes/"
+        },
+        "files": []
+    }
+}
