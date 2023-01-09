@@ -58,9 +58,42 @@ class ThemePawLibraryInit {
 	 * Init
 	 */
 	public function init() {
+
+		// Check if Elementor installed and activated
+        if ( ! defined( 'ELEMENTOR_VERSION' ) ) {
+            add_action( 'admin_notices', [ $this, 'admin_notice_missing_elementor' ] );
+
+            return;
+        }
+
+
         Hooks::get_instance();
         Api::get_instance();
 	}
+
+	/**
+     * Admin notice
+     *
+     * Warning when the site doesn't have Elementor installed or activated.
+     *
+     * @since 1.0.0
+     *
+     * @access public
+     */
+    public function admin_notice_missing_elementor() {
+        if ( isset( $_GET['activate'] ) ) {
+            unset( $_GET['activate'] );
+        }
+
+        $message = sprintf(
+            /* translators: 1: Plugin name 2: Elementor */
+            esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'paw-elementor-library' ),
+            '<strong>' . esc_html__( 'Themepaw Elementor Library Kits', 'paw-elementor-library' ) . '</strong>',
+            '<strong>' . esc_html__( 'Elementor', 'paw-elementor-library' ) . '</strong>'
+        );
+
+        printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+    }
 
 
 	/**
