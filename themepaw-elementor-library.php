@@ -3,7 +3,7 @@
 Plugin Name: Themepaw Elementor Library Kits
 Plugin URI: https://www.themepaw.com/
 Description: A toolkit for Elementor library API.
-Version: 0.1
+Version: 0.2
 Author: Mohammad Limon
 Author URI: https://www.themepaw.com
 */
@@ -26,7 +26,7 @@ class ThemePawLibraryInit {
      *
      * @var string
      */
-    const version = '0.1';
+    const version = '0.2';
 
     /**
 	 * Call this method to get the singleton

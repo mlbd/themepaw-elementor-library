@@ -126,7 +126,7 @@ class Utility {
 					$section_categories[] = $term;
 				}
 			}
-			$page_categories = array_unique( $page_categories );
+			$section_categories = array_unique( $section_categories );
 		}
 
 		$categories = []; 
